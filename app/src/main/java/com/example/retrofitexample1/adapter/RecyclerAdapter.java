@@ -42,7 +42,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Myview
 
     @Override
     public void onBindViewHolder(@NonNull MyviewHolder holder, int position) {
-     holder.tvMovieName.setText(movieList.get(position).getTitle().toString());
+     holder.tvMovieName.setText(movieList.get(position).getTitle());
         Glide.with(context).
                 load(movieList.get(position).getImage()).
                 apply(RequestOptions.centerCropTransform()).into(holder.image);
@@ -62,7 +62,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Myview
         return super.getItemId(position);
     }
 
-    public class MyviewHolder extends RecyclerView.ViewHolder{
+    public static class MyviewHolder extends RecyclerView.ViewHolder{
          TextView tvMovieName;
          ImageView image;
 
