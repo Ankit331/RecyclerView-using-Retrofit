@@ -1,5 +1,7 @@
 package com.example.retrofitexample1;
 
+import com.example.retrofitexample1.model.Movie;
+
 import java.util.List;
 
 import retrofit2.Call;

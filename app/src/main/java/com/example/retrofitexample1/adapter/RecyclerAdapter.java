@@ -1,4 +1,4 @@
-package com.example.retrofitexample1;
+package com.example.retrofitexample1.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.retrofitexample1.R;
+import com.example.retrofitexample1.model.Movie;
 
 import java.util.List;
 

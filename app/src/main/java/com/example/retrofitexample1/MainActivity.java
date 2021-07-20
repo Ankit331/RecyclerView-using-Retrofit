@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.retrofitexample1.adapter.RecyclerAdapter;
+import com.example.retrofitexample1.model.Movie;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.recyclerview);
 
          recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
-        recyclerAdapter=new RecyclerAdapter(getApplicationContext(), movieList);
-        recyclerView.setAdapter(recyclerAdapter);
+         recyclerAdapter=new RecyclerAdapter(getApplicationContext(), movieList);
+         recyclerView.setAdapter(recyclerAdapter);
 
         // Call class of retrofit
         ApiInterface apiInterface=ApiClient.getClient().create(ApiInterface.class);
+        // Fetching List from interface
         Call<List<Movie>> call=apiInterface.getMovies();
 
         call.enqueue(new Callback<List<Movie>>() {
